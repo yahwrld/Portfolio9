@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Hayao Miyazaki</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>Hayao Miyazaki</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#home">Accueil</a></li>
+      <li><a href="#biographie">Biographie</a></li>
+      <li><a href="#works">Films</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#citations">Citations</a></li>
+      <li><a href="#contact" role="button">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section Accueil -->
+  <section id="home" class="container">
+    <div class="hero">
+      <h1>Bienvenue dans l'univers de Hayao Miyazaki</h1>
+      <p>Plongez dans le monde magique et intemporel de ce maître de l'animation japonaise.</p>
+      <a href="#biographie" id="read-more" class="button">En savoir plus</a>
+    </div>
+  </section>
+
+  <!-- Section Biographie -->
+  <section id="biographie" class="container">
+    <article>
+      <h2>Biographie</h2>
+      <div class="bio-content">
+        <!-- Image à gauche -->
+        <figure>
+          <img src="C:\Users\pc\OneDrive\Desktop\Portefolio2\Images\Biographie.jpg" alt="Portrait de Hayao Miyazaki">
+          <figcaption>Hayao Miyazaki</figcaption>
+        </figure>
+        <!-- Texte à droite -->
+        <div class="bio-text">
+          <p>Hayao Miyazaki, né en 1941 à Tokyo, est une figure emblématique de l'animation japonaise. Cofondateur du
+            Studio Ghibli, il a réalisé des chefs-d'œuvre tels que <em>Mon voisin Totoro</em> et <em>Le Voyage de
+              Chihiro</em>, qui explorent des thèmes comme l'écologie, l'enfance et la magie.</p>
+          <button id="read-more-bio" class="button">Lire plus</button>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Fenêtre modale pour la biographie détaillée -->
+  <div id="bio-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Biographie détaillée</h2>
+      <p>Hayao Miyazaki est né le 5 janvier 1941 à Tokyo, au Japon. Il a grandi dans une famille où l'industrie
+        aéronautique jouait un rôle important, ce qui a influencé son amour pour le dessin et son intérêt pour les
+        avions, que l'on retrouve dans de nombreux films comme <em>Porco Rosso</em>.</p>
+      <p>En 1985, il co-fonde le Studio Ghibli avec Isao Takahata. Ce studio devient un pilier de l'industrie de
+        l'animation, produisant des chefs-d'œuvre reconnus mondialement.</p>
+    </div>
+  </div>
+
+  <!-- Section Films -->
+  <section id="works" class="container">
+    <h2>Films</h2>
+    <p>Découvrez les films emblématiques de Hayao Miyazaki :</p>
+    <div class="grid">
+      <figure class="movie" data-movie="totoro">
+        <img src="C:\Users\pc\OneDrive\Desktop\Portefolio2\Images\My Neighbor Totoro.jpg" alt="Mon voisin Totoro">
+        <figcaption>Mon voisin Totoro</figcaption>
+      </figure>
+      <figure class="movie" data-movie="spirited-away">
+        <img src="C:\Users\pc\OneDrive\Desktop\Portefolio2\Images\spirited away.jpg" alt="Le Voyage de Chihiro">
+        <figcaption>Le Voyage de Chihiro</figcaption>
+      </figure>
+      <figure class="movie" data-movie="princess-mononoke">
+        <img src="C:\Users\pc\OneDrive\Desktop\Portefolio2\Images\Princess Mononoke.jpg" alt="Princesse Mononoké">
+        <figcaption>Princesse Mononoké</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Modale pour afficher les détails des films -->
+  <div id="movie-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="movie-title"></h2>
+      <p id="movie-summary"></p>
+      <p><strong>Date de sortie :</strong> <span id="movie-release"></span></p>
+      <p><strong>Appréciations :</strong> <span id="movie-ratings"></span></p>
+      <div id="movie-slides" class="slides">
+        <!-- Images de diaporama insérées dynamiquement -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Section CV -->
+  <section id="cv" class="container">
+    <h2>CV</h2>
+    <p>Téléchargez le CV complet de Hayao Miyazaki pour découvrir son parcours :</p>
+    <a href="hayao-miyazaki-cv.pdf" download class="button">Télécharger le CV</a>
+  </section>
+
+  <!-- Section Parcours professionnel -->
+  <section id="parcours" class="container">
+    <h2>Parcours professionnel</h2>
+    <p>Découvrez le parcours exceptionnel de Hayao Miyazaki, de ses débuts dans l'animation jusqu'à son statut de
+      légende du cinéma d'animation.</p>
+    <article>
+      <h3>Formation</h3>
+      <p>Hayao Miyazaki est diplômé de l'<strong>Université Gakushuin</strong> à Tokyo.</p>
+    </article>
+  </section>
+</body>
+
+</html>
