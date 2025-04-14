@@ -1,0 +1,28 @@
+# Portfolio : Hommage à Hayao Miyazaki
+
+Ce portfolio est un projet réalisé en équipe pour rendre hommage à **Hayao Miyazaki**, maître de l'animation japonaise et fondateur du Studio Ghibli. Le site présente son univers, ses œuvres emblématiques, et son style artistique unique.
+
+## 🌟 Contenu du projet
+
+- Présentation de Hayao Miyazaki
+- Sélection de ses films iconiques
+- Esthétique inspirée de l’univers Ghibli
+- Animations légères en JavaScript
+
+## 🛠️ Technologies utilisées
+
+- HTML5
+- CSS3
+- JavaScript (vanilla)
+
+## 🚀 Comment lancer le projet
+
+Aucune installation requise. Il suffit d’ouvrir `index.html` dans un navigateur moderne.
+
+## 🤝 Collaborateurs
+
+Yahya yahwrld
+
+## 📄 Licence
+
+Ce projet est sous licence MIT — voir [LICENSE](./LICENSE) pour plus de détails.
