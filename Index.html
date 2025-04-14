@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Découvrez l'univers magique de Hayao Miyazaki, maître de l'animation japonaise et cofondateur du Studio Ghibli.">
+  <meta name="keywords" content="Hayao Miyazaki, Studio Ghibli, Animation, Films, Biographie, Citations">
+  <meta name="author" content="Votre Nom">
+  <title>Portfolio - Hayao Miyazaki</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;700&display=swap"
+    rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Sound Effects -->
+  <audio id="hover-sound">
+    <source src="Sounds/hover-button-287656.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="click-sound">
+    <source src="Sounds/mouse-click-117076.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- Background Music -->
+  <audio id="background-music" loop>
+    <source src="Sounds/02 Drama Genki Ni Naresou.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- Loading Animation -->
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>Hayao Miyazaki</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#home">Accueil</a></li>
+      <li><a href="#biographie">Biographie</a></li>
+      <li><a href="#works">Films</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#citations">Citations</a></li>
+      <li><a href="#contact" role="button">Contact</a></li>
+      <li>
+        <button id="dark-mode-toggle" class="button">
+          <i class="fas fa-moon"></i> <!-- Moon icon for dark mode -->
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+
+  <!-- Section Accueil -->
+  <section id="home" class="container">
+    <div class="hero">
+      <h1>Bienvenue dans l'univers de Hayao Miyazaki</h1>
+      <p>Plongez dans le monde magique et intemporel de ce maître de l'animation japonaise.</p>
+      <a href="#biographie" class="button">En savoir plus</a>
+    </div>
+  </section>
+
+  <!-- Section Biographie -->
+  <section id="biographie" class="container">
+    <article>
+      <h2>Biographie</h2>
+      <div class="bio-content">
+        <!-- Image à gauche -->
+        <figure>
+          <img src="Images\Biographie.jpg" alt="Portrait de Hayao Miyazaki">
+          <figcaption>Hayao Miyazaki</figcaption>
+        </figure>
+        <!-- Texte à droite -->
+        <div class="bio-text">
+          <p>Hayao Miyazaki, né en 1941 à Tokyo, est une figure emblématique de l'animation japonaise. Cofondateur du
+            Studio Ghibli, il a réalisé des chefs-d'œuvre tels que <em>Mon voisin Totoro</em> et <em>Le Voyage de
+              Chihiro</em>, qui explorent des thèmes comme l'écologie, l'enfance et la magie.</p>
+          <button id="read-more" class="button">Lire plus</button>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Fenêtre modale pour la biographie détaillée -->
+  <div id="bio-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Biographie détaillée</h2>
+      <p>Hayao Miyazaki est né le 5 janvier 1941 à Tokyo, au Japon. Il a grandi dans une famille où l'industrie
+        aéronautique jouait un rôle important, ce qui a influencé son amour pour le dessin et son intérêt pour les
+        avions, que l'on retrouve dans de nombreux films comme <em>Porco Rosso</em>.</p>
+      <p>En 1985, il co-fonde le Studio Ghibli avec Isao Takahata. Ce studio devient un pilier de l'industrie de
+        l'animation, produisant des chefs-d'œuvre reconnus mondialement.</p>
+    </div>
+  </div>
+
+  <!-- Section Films -->
+  <section id="works" class="container">
+    <h2>Films</h2>
+    <p>Découvrez les films emblématiques de Hayao Miyazaki :</p>
+    <div class="grid">
+      <figure class="movie" data-movie="totoro">
+        <img src="Images\My Neighbor Totoro.jpg" alt="Mon voisin Totoro">
+        <figcaption>Mon voisin Totoro</figcaption>
+      </figure>
+      <figure class="movie" data-movie="spirited-away">
+        <img src="Images\spirited away pic1.jpg" alt="Le Voyage de Chihiro">
+        <figcaption>Le Voyage de Chihiro</figcaption>
+      </figure>
+      <figure class="movie" data-movie="princess-mononoke">
+        <img src="Images\Princess Mononoke.jpg" alt="Princesse Mononoké">
+        <figcaption>Princesse Mononoké</figcaption>
+      </figure>
+      <figure class="movie" data-movie="howls-moving-castle">
+        <img src="Images\MovingCastleAffiche.jpg" alt="howls-moving-castle">
+        <figcaption>Le Château ambulant</figcaption>
+      </figure>
+      <figure class="movie" data-movie="the-wind-rises">
+        <img src="Images\Levent.jpg" alt="the-wind-rises">
+        <figcaption>Le Vent se Lève</figcaption>
+      </figure>
+      <figure class="movie" data-movie="kikis-delivery-service">
+        <img src="Images\kiki.jpg" alt="kikis-delivery-service">
+        <figcaption>Kiki la petite sorcière</figcaption>
+      </figure>
+      <figure class="movie" data-movie="the-boy-and-the-heron">
+        <img src="Images\the-boy-and-the-heron.jpg" alt="the-boy-and-the-heron">
+        <figcaption>Le Garçon et le Héron</figcaption>
+      </figure>
+      <figure class="movie" data-movie="castle-in-the-sky">
+        <img src="Images\Le Château dans le ciel.jpg" alt="castle-in-the-sky">
+        <figcaption>Le Château dans le ciel</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Modale pour afficher les détails des films -->
+  <div id="movie-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="movie-title"></h2>
+      <p id="movie-summary"></p>
+      <p><strong>Date de sortie :</strong> <span id="movie-release"></span></p>
+      <p><strong>Appréciations :</strong> <span id="movie-ratings"></span></p>
+      <div id="movie-slides" class="slides">
+        <button class="arrow left-arrow">&larr;</button>
+        <div class="slide-container">
+          <!-- Images de diaporama insérées dynamiquement -->
+        </div>
+        <button class="arrow right-arrow">&rarr;</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Section CV -->
+  <section id="cv" class="container">
+    <h2>CV de Hayao Miyazaki</h2>
+    <p>Découvrez le parcours complet de Hayao Miyazaki, légende de l'animation, à travers une chronologie interactive.
+    </p>
+    <!-- Bouton pour télécharger le CV en PDF -->
+    <a href="Portfolio-Hayao-Miyazaki.pdf" download="CV_Hayao_Miyazaki.pdf" class="button">
+      <i class="fas fa-download"></i> Télécharger le CV (PDF)
+    </a>
+
+
+    <!-- Timeline -->
+    <div class="timeline">
+      <!-- Milestone 1: Formation -->
+      <div class="milestone"
+        data-details="Hayao Miyazaki est diplômé de l'Université Gakushuin à Tokyo, où il a étudié les sciences politiques et l'économie.">
+        <div class="milestone-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="milestone-content">
+          <h3>Formation</h3>
+          <p>Université Gakushuin, Tokyo</p>
+          <p>1963</p>
+        </div>
+      </div>
+
+      <!-- Milestone 2: Débuts dans l'animation -->
+      <div class="milestone"
+        data-details="Miyazaki a commencé sa carrière en 1963 en tant qu'intervalliste à Toei Animation. Il a rapidement gravi les échelons pour devenir animateur clé, scénariste, et réalisateur.">
+        <div class="milestone-icon">
+          <i class="fas fa-film"></i>
+        </div>
+        <div class="milestone-content">
+          <h3>Débuts dans l'animation</h3>
+          <p>Toei Animation</p>
+          <p>1963 - 1971</p>
+        </div>
+      </div>
+
+      <!-- Milestone 3: Co-fondation de Studio Ghibli -->
+      <div class="milestone"
+        data-details="En 1985, Hayao Miyazaki, avec Isao Takahata et Toshio Suzuki, a co-fondé Studio Ghibli, un studio d'animation qui est devenu synonyme de films d'animation de haute qualité.">
+        <div class="milestone-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="milestone-content">
+          <h3>Co-fondation de Studio Ghibli</h3>
+          <p>Studio Ghibli</p>
+          <p>1985 - Présent</p>
+        </div>
+      </div>
+
+      <!-- Milestone 4: Réalisations majeures -->
+      <div class="milestone"
+        data-details="Miyazaki a réalisé de nombreux films acclamés par la critique et adorés par le public, notamment <em>Mon Voisin Totoro</em>, <em>Le Voyage de Chihiro</em>, et <em>Princesse Mononoké</em>.">
+        <div class="milestone-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+
+        <div class="milestone-content">
+          <h3>Réalisations majeures</h3>
+          <p>Films emblématiques</p>
+          <p>1988 - 2013</p>
+        </div>
+      </div>
+
+      <!-- Milestone 5: Reconnaissance internationale -->
+      <div class="milestone"
+        data-details="Hayao Miyazaki a reçu de nombreuses récompenses tout au long de sa carrière, y compris un Oscar d'honneur en 2014 pour son impact significatif sur l'industrie du cinéma.">
+        <div class="milestone-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <div class="milestone-content">
+          <h3>Reconnaissance internationale</h3>
+          <p>Récompenses et distinctions</p>
+          <p>2002 - 2014</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Milestone Details -->
+    <div id="cv-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-details"></p>
+      </div>
+    </div>
+  </section>
+  <!-- Section Parcours professionnel -->
+  <section id="parcours" class="container">
+    <h2>Parcours professionnel</h2>
+    <p>Découvrez le parcours exceptionnel de Hayao Miyazaki, de ses débuts dans l'animation jusqu'à son statut de
+      légende du cinéma d'animation.</p>
+
+    <!-- Timeline Image -->
+    <img src="Images/timeline2.jpg" alt="Timeline de Hayao Miyazaki" class="responsive-img timeline-image">
+
+    <!-- Article: Formation -->
+    <article class="parcours-article">
+      <div class="parcours-content">
+        <div class="parcours-image">
+          <img src="Images/Gakushuin University.jpg" alt="Université Gakushuin" class="responsive-img clickable-image"
+            data-images="Images\form1.jpeg,Images\form2.jpeg,Images\form3.jpeg">
+        </div>
+        <div class="parcours-text">
+          <h3>Formation</h3>
+          <p>Hayao Miyazaki est diplômé de l'<strong>Université Gakushuin</strong> à Tokyo, où il a étudié les sciences
+            politiques et l'économie. Cependant, sa passion pour le dessin et l'animation l'a conduit à entrer dans
+            l'industrie de l'animation. <a href="https://www.gakushuin.ac.jp/" target="_blank">En savoir plus sur
+              l'Université Gakushuin</a>.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Article: Débuts dans l'animation -->
+    <article class="parcours-article">
+      <div class="parcours-content">
+        <div class="parcours-image">
+          <img src="Images/toei2.png" alt="Toei Animation" class="responsive-img clickable-image"
+            data-images="Images\Ghib.jpeg,Images/debut.jpeg,Images/toei6.jpeg">
+        </div>
+        <div class="parcours-text">
+          <h3>Débuts dans l'animation</h3>
+          <p><a href="https://www.toei-animation.com/" target="_blank">Miyazaki </a>a commencé sa carrière en 1963 en
+            tant
+            qu'intervalliste à <strong>Toei Animation</strong>. Il a
+            rapidement gravi les échelons pour devenir animateur clé, scénariste, et réalisateur. Parmi ses premiers
+            travaux notables, on trouve son implication dans la série animée <em>Le Chat botté</em> (1969) et le film
+            <em>Le Vaisseau fantôme volant</em> (1969). <a href="https://www.toei-animation.com/"
+              target="_blank">Visitez le site de Toei Animation</a>.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Article: Co-fondation de Studio Ghibli -->
+    <article class="parcours-article">
+      <div class="parcours-content">
+        <div class="parcours-image">
+          <img src="Images/ghibli2.png" alt="Studio Ghibli" class="responsive-img clickable-image"
+            data-images="Images/SpirtedAway_pic4.jpg,Images/ghiblii1.jpeg,Images/ghiblii2.jpeg">
+        </div>
+        <div class="parcours-text">
+          <h3>Co-fondation de Studio Ghibli</h3>
+          <p>En 1985, Hayao Miyazaki, avec Isao Takahata et Toshio Suzuki, a co-fondé <strong>Studio Ghibli</strong>, un
+            studio d'animation qui est devenu synonyme de films d'animation de haute qualité. Leur premier film sous le
+            nom de Studio Ghibli était <em>Le Château dans le ciel</em> (1986). <a href="https://www.ghibli.jp/"
+              target="_blank">Découvrez plus sur Studio Ghibli</a>.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Modal for Additional Images -->
+    <div id="image-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <div id="modal-images" class="modal-images">
+          <!-- Additional images will be inserted here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Citations -->
+  <section id="citations" class="container">
+    <h2>Citations et Références</h2>
+    <p>Explorez les citations académiques, les analyses critiques et les références liées aux travaux de Hayao Miyazaki.
+    </p>
+
+    <!-- Citation Cards -->
+    <div class="citation-grid">
+      <!-- Card 1: Citations de Hayao Miyazaki -->
+      <div class="citation-card" data-images="Images/miyazaki1.jpg,Images/miyazaki2.jpg,Images/miyazaki3.jpg">
+        <div class="citation-card-inner">
+          <div class="citation-card-front">
+            <img src="Images/miyazaki-speaks.jpg" alt="Hayao Miyazaki réfléchissant" class="responsive-img">
+            <h3>Citations de Hayao Miyazaki</h3>
+          </div>
+          <div class="citation-card-back">
+            <blockquote>
+              "L'animation, c'est créer un monde qui n'existe pas encore. C'est un acte de pure imagination."
+              <footer>— Hayao Miyazaki</footer>
+            </blockquote>
+            <blockquote>
+              "Je ne fais pas des films pour les enfants. Je les fais pour l'enfant qui est en chacun de nous."
+              <footer>— Hayao Miyazaki</footer>
+            </blockquote>
+            <blockquote>
+              "Le monde est rempli de merveilles, mais elles sont souvent cachées dans les détails."
+              <footer>— Hayao Miyazaki</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Citations de Films -->
+      <div class="citation-card" data-images="Images/film1.jpg,Images/film2.jpg,Images/film3.jpg">
+        <div class="citation-card-inner">
+          <div class="citation-card-front">
+            <img src="Images/Le Voyage de Chihiro.jpg" alt="Affiche du film Le Voyage de Chihiro"
+              class="responsive-img">
+            <h3>Citations de Films</h3>
+          </div>
+          <div class="citation-card-back">
+            <ul>
+              <li>
+                <strong>APA Style:</strong>
+                Miyazaki, H. (Director). (2001). <em>Le Voyage de Chihiro</em> [Film]. Studio Ghibli.
+              </li>
+              <li>
+                <strong>MLA Style:</strong>
+                Miyazaki, Hayao, director. <em>Le Voyage de Chihiro</em>. Studio Ghibli, 2001.
+              </li>
+              <li>
+                <strong>Chicago Style:</strong>
+                Miyazaki, Hayao. 2001. <em>Le Voyage de Chihiro</em>. Directed by Hayao Miyazaki. Tokyo: Studio Ghibli.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Citations de Livres -->
+      <div class="citation-card" data-images="Images/book1.jpg,Images/book2.jpg,Images/book3.jpg">
+        <div class="citation-card-inner">
+          <div class="citation-card-front">
+            <img src="Images/Starting Point.jpg" alt="Couverture du livre Starting Point" class="responsive-img">
+            <h3>Citations de Livres</h3>
+          </div>
+          <div class="citation-card-back">
+            <ul>
+              <li>
+                <strong>APA Style:</strong>
+                Miyazaki, H. (2009). <em>Starting Point: 1979-1996</em>. VIZ Media LLC.
+              </li>
+              <li>
+                <strong>MLA Style:</strong>
+                Miyazaki, Hayao. <em>Starting Point: 1979-1996</em>. VIZ Media LLC, 2009.
+              </li>
+              <li>
+                <strong>Chicago Style:</strong>
+                Miyazaki, Hayao. 2009. <em>Starting Point: 1979-1996</em>. San Francisco: VIZ Media LLC.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Additional Images -->
+    <div id="citation-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <div id="modal-images" class="modal-images">
+          <!-- Additional images will be inserted here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contact -->
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <input type="text" id="name" name="name" placeholder="Votre nom" required>
+      <input type="email" id="email" name="email" placeholder="Votre email" required>
+      <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+    <p id="formResponse" style="margin-top: 10px; color: green;"></p> <!-- Zone pour le message -->
+  </section>
+
+  <!-- Script JavaScript -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Empêche le comportement par défaut (rechargement de la page)
+
+      const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+      };
+
+      const formResponse = document.getElementById("formResponse");
+
+      fetch("/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", // Définit l'en-tête Content-Type
+        },
+        body: JSON.stringify(formData), // Convertit les données en JSON
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Erreur lors de l'envoi du formulaire.");
+          }
+          return response.text();
+        })
+        .then((message) => {
+          formResponse.textContent = message; // Affiche le message de confirmation
+          formResponse.style.color = "green";
+          this.reset(); // Réinitialise le formulaire
+        })
+        .catch((error) => {
+          formResponse.textContent = "Erreur lors de l'envoi du message. Veuillez réessayer.";
+          formResponse.style.color = "red";
+          console.error("Erreur:", error);
+        });
+    });
+  </script>
+
+
+  <!-- Footer -->
+  <footer class="container">
+    <p>&copy; 2025 Hayao Miyazaki Portfolio. Tous droits réservés.</p>
+    <div class="social-links">
+      <a href="https://x.com/hmiyazaki_news?lang=en&mx=2" target="_blank" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/miyazaki_movies/?hl=en" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/hayaomiyazakiii/" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.youtube.com/watch?v=mjAWVZq6wlw" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+    <!-- Music Controls -->
+    <div id="music-controls">
+      <button id="music-toggle">
+        <i class="fas fa-music"></i> <!-- Music icon -->
+      </button>
+      <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="button">
+    <i class="fas fa-arrow-up"></i> <!-- Font Awesome arrow icon -->
+  </button>
+</body>
+
+</html>
